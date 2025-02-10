@@ -41,7 +41,7 @@ def get_llm_response(user_message, chat_history=None):
         
         # Make the API call to the first endpoint
         response = requests.post(
-            "https://0x3df368687bb8ab1d82351e2bb2a815451d7e8ccf.gaia.domains/v1/chat/completions", 
+            "https://0x5259b4d33591e7d48e9e044ed7c120058ba8e605.gaia.domains/v1/chat/completions", 
             json=payload,
             headers={
                 "Content-Type": "application/json"
