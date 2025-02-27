@@ -3,6 +3,8 @@ import requests
 import uuid
 import json
 
+api_key = st.secrets['GAIA_API_KEY']
+
 # Set page configuration
 st.set_page_config(page_title="Chat with Steve Jobs' Digital Twin", page_icon="💬", layout="wide")
 
@@ -44,7 +46,8 @@ def get_llm_response(user_message, chat_history=None):
             "https://0x5259b4d33591e7d48e9e044ed7c120058ba8e605.gaia.domains/v1/chat/completions", 
             json=payload,
             headers={
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authentication": "Bearer {api_key}"
             },
             stream=True
         )
